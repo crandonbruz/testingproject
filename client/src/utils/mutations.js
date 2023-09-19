@@ -26,13 +26,13 @@ export const ADD_USER = gql`
 // change the mutation to match the checklist
 export const ADD_CHECKLIST = gql`
   mutation addCheckList(
-    $checkListText: String!
-    $checkListAuthor: String!
+    $checkListText: String!,
+    $checkListAuthor: String!,
     $items: [CheckItemInput]
   ) {
     addCheckList(
-      checkListText: $checkListText
-      checkListAuthor: $checkListAuthor
+      checkListText: $checkListText,
+      checkListAuthor: $checkListAuthor,
       items: $items
     ) {
       _id

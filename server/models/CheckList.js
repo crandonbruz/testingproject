@@ -18,7 +18,7 @@ const checkItemSchema = new Schema({
 
 // a list of items
 const checkListSchema = new Schema({
-  title: {
+  checkListText: {
     type: String,
     required: "You need to leave a title!",
     minlength: 1,

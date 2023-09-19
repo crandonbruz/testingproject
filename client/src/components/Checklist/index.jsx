@@ -17,7 +17,7 @@ const checkList = ({ checkLists, title }) => {
             <h4 className="card-header bg-primary text-light p-2 m-0">
               <Link
                 className="text-light text-center"
-                to={`/profiles/checklist.checklistAuthor`}
+                to={`/checkLists/$checkList._id`}
               >
                 {checkList.checkListAuthor}
               </Link>

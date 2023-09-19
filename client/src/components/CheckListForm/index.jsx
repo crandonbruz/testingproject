@@ -48,11 +48,11 @@ const CheckListForm = () => {
     setItems([...items, ""]);
   };
 
-  const handleItemChange = (e) => {
-    const { name, value } = e.target;
-    const list = [...items];
-    list[name] = value;
-    setItems(list);
+  const handleItemChange = (e, index) => {
+    const { value } = e.target;
+    const updatedItems = [...items];
+    updatedItems[index] = value;
+    setItems(updatedItems);
   };
 
   // change the thought list form to make it the checklist and to add items to it and also connect the querys
@@ -91,11 +91,11 @@ const CheckListForm = () => {
                     value={item}
                     className="form-input w-100"
                     style={{ lineHeight: "1.5", resize: "vertical" }}
-                    onChange={handleItemChange}
+                    onChange={(e) => handleItemChange (e, index)}
                     key={index}
                   ></textarea>
                 ))}
-                <button onClick={addItems}>add</button>
+                <button onClick={addItems}>Add</button>
               </div>
 
               <div className="col-12 col-lg-3">

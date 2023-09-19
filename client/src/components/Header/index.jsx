@@ -20,7 +20,7 @@ const Header = () => {
         <div>
           {Auth.loggedIn() ? (
             <>
-              <Link className="btn btn-lg btn-info m-2" to="/me">
+              <Link className="btn btn-lg btn-info m-2" to="/checkLists/:checkListId">
                 {/* Run the getProfile() method to get access to the unencrypted token value in order to retrieve the user's username  */}
                 {Auth.getProfile()?.authenticatedPerson?.username}'s profile
               </Link>
@@ -57,7 +57,7 @@ const Header = () => {
               <a
                 className="
                 btn btn-primary"
-                href="/me"
+                href="/checkLists/:checkListId"
               >
                 Profile
               </a>
