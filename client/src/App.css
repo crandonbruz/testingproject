@@ -1,0 +1,232 @@
+body {
+  background-image: url(../wp2381630-natural-disasters-wallpapers.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Gluten", cursive;
+}
+header {
+  font-family: "Comfortaa", cursive;
+  background-image: url(/SOS_connect.png);
+  background-repeat: no-repeat;
+  background-size: 8%;
+}
+
+header h1 {
+  font-size: 60px;
+}
+#root {
+  /* max-width: 2000px; */
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  /* background-size: 100vh; */
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-nav {
+  display: flex;
+}
+
+.navbar-nav-items {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  margin-right: 1rem;
+}
+
+.row {
+  --bs-gutter-x: 67.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+.sidebar {
+  position: fixed;
+  top: 200px;
+  left: 0;
+  bottom: 0;
+  width: 420px;
+  z-index: 996;
+  transition: all 0.3s;
+  padding: 20px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #edede9 transparent;
+  box-shadow: 0px 0px 20px rgba(58, 91, 148, 0.1);
+  /* /* background-color: #edede9;
+  opacity: 2;  */
+}
+
+.sidebar-nav {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-nav .nav-item {
+  margin-bottom: 5px;
+}
+
+.sidebar-nav .nav-heading {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #2d3e50;
+  font-weight: 600;
+  margin: 10px 0 5px 15px;
+}
+
+.sidebar-nav .nav-link {
+  display: flex;
+  align-items: center;
+  font-size: 55px;
+  font-weight: 600;
+  color: #2d3e50;
+  transition: 0.3;
+  background: #4866a2;
+  padding: 10px 15px;
+  /* border-radius: 65px; */
+}
+
+.sidebar-nav .nav-link i {
+  font-size: 16px;
+  margin-right: 10px;
+  color: #4154f1;
+}
+
+.sidebar-nav .nav-link.collapsed {
+  color: #012970;
+  background: #edede9;
+  opacity: 0.8;
+}
+
+.sidebar-nav .nav-link.collapsed i {
+  color: #899bbd;
+}
+
+.sidebar-nav .nav-link:hover {
+  color: #4154f1;
+  background: #f6f9ff;
+}
+
+.sidebar-nav .nav-link:hover i {
+  color: #4154f1;
+}
+
+.sidebar-nav .nav-link .bi-chevron-down {
+  margin-right: 0;
+  transition: transform 0.2s ease-in-out;
+}
+
+.sidebar-nav .nav-link:not(.collapsed) .bi-chevron-down {
+  transform: rotate(180deg);
+}
+
+.sidebar-nav .nav-content {
+  padding: 5px 0 0 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-nav .nav-content a {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #012970;
+  transition: 0.3;
+  padding: 10px 0 10px 40px;
+  transition: 0.3s;
+}
+
+.sidebar-nav .nav-content a i {
+  font-size: 6px;
+  margin-right: 8px;
+  line-height: 0;
+  border-radius: 50%;
+}
+
+.sidebar-nav .nav-content a:hover,
+.sidebar-nav .nav-content a.active {
+  color: #4154f1;
+}
+
+.sidebar-nav .nav-content a.active i {
+  background-color: #4154f1;
+}
+
+/* Add this CSS to your stylesheet or a separate CSS file */
+
+/* Overlay */
+.modal-slide-fade .modal-backdrop {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Initial state - hidden */
+.modal-slide-fade .modal-dialog {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Final state - visible */
+.modal-slide-fade.show .modal-dialog {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.box {
+  width: 100%;
+}
