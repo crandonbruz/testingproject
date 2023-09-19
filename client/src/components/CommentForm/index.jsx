@@ -21,7 +21,7 @@ const CommentForm = ({ checkListId }) => {
           checkListId,
           commentText,
           // Run the getProfile() method to get access to the unencrypted token value in order to retrieve the user's username 
-          commentAuthor: Auth.getProfile().authenticatedPerson.username
+          commentAuthor: Auth.getProfile().data.username
         },
       });
 
@@ -42,7 +42,7 @@ const CommentForm = ({ checkListId }) => {
 
   return (
     <div>
-      <h4>What are your thoughts on this thought?</h4>
+      <h4>What do you think about this list?</h4>
 
       {Auth.loggedIn() ? (
         <>
@@ -78,7 +78,7 @@ const CommentForm = ({ checkListId }) => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your thoughts. Please{' '}
+          You need to be logged in to share about the list. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}

@@ -51,23 +51,23 @@ export const QUERY_SINGLE_CHECKLIST = gql`
   }
 `;
 
-// export const QUERY_ME = gql`
-//   query me {
-//     me {
-//       _id
-//       username
-//       email
-//       checkLists {
-//         items {
-//           text
-//           isCheck
-//         }
-//         title
-//         user {
-//           username
-//           email
-//         }
-//       }
-//     }
-//   }
-// `;
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      email
+      checkLists {
+        _id
+        checkListText
+        checkListAuthor
+        createdAt
+        items {
+          text
+          isCheck
+        }
+        title
+      }
+    }
+  }
+`;

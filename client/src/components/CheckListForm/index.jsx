@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 
 import { ADD_CHECKLIST } from "../../utils/mutations";
-import { GET_ALL_CHECKLISTS } from "../../utils/queries";
+import { GET_ALL_CHECKLISTS, QUERY_ME } from "../../utils/queries";
 
 import Auth from "../../utils/auth";
 import checkList from "../Checklist";
@@ -15,7 +15,7 @@ const CheckListForm = () => {
   const [characterCount, setCharacterCount] = useState(0);
 
   const [addCheckList, { error }] = useMutation(ADD_CHECKLIST, {
-    refetchQueries: [GET_ALL_CHECKLISTS, "getCheckLists"],
+    refetchQueries: [GET_ALL_CHECKLISTS, "getCheckLists", QUERY_ME, "me"],
   });
 
   const handleFormSubmit = async (event) => {
@@ -29,7 +29,7 @@ const CheckListForm = () => {
         },
       });
 
-      setCheckListText('');
+      setCheckListText("");
     } catch (err) {
       console.error(err);
     }
@@ -91,7 +91,7 @@ const CheckListForm = () => {
                     value={item}
                     className="form-input w-100"
                     style={{ lineHeight: "1.5", resize: "vertical" }}
-                    onChange={(e) => handleItemChange (e, index)}
+                    onChange={(e) => handleItemChange(e, index)}
                     key={index}
                   ></textarea>
                 ))}
@@ -106,7 +106,6 @@ const CheckListForm = () => {
                   Create List
                 </button>
               </div>
-
             </form>
           </>
         ) : (

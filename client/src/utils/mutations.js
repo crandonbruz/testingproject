@@ -28,7 +28,7 @@ export const ADD_CHECKLIST = gql`
   mutation addCheckList(
     $checkListText: String!,
     $checkListAuthor: String!,
-    $items: [CheckItemInput]
+    $items: [CheckItemInput]!
   ) {
     addCheckList(
       checkListText: $checkListText,

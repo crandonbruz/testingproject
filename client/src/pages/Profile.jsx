@@ -11,14 +11,14 @@ const Profile = () => {
   const { username: userParam } = useParams();
 
   const { loading, data } = useQuery(QUERY_USER, {
-    variables: { username: Auth.getProfile().authenticatedPerson.username },
+    variables: { username: Auth.getProfile().data.username },
   });
 
   const user = data?.me || data?.user || {};
   if (
     Auth.loggedIn() &&
     /* Run the getProfile() method to get access to the unencrypted token value in order to retrieve the user's username, and compare it to the userParam variable */
-    Auth.getProfile().authenticatedPerson.username === userParam
+    Auth.getProfile().data.username === userParam
   ) {
     return <Navigate to="/me" />;
   }
