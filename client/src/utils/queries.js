@@ -35,7 +35,7 @@ export const GET_ALL_CHECKLISTS = gql`
 `;
 
 export const QUERY_SINGLE_CHECKLIST = gql`
-  query getSingleCkeckList($checkListId: ID!) {
+  query getSingleCheckList($checkListId: ID!) {
     checkList(checkListId: $checkListId) {
       _id
       checkListText
