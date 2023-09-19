@@ -14,8 +14,8 @@ const typeDefs = `
 
   type CheckList {
     _id: ID!
-    checklistText: String!
-    checklistAuthor: String
+    checkListText: String!
+    checkListAuthor: String
     createdAt: String
     comments: [Comment]!
     items: [CheckItem]
@@ -40,20 +40,20 @@ const typeDefs = `
     users: [User]
     user(username: String): User
     checkLists(username:String): [CheckList]
-    checkList(checklistId: ID!): CheckList
+    checkList(checkListId: ID!): CheckList
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addCheckList(checklistText: String!, checkListAuthor: String! items: [CheckItemInput]): CheckList
+    addCheckList(checkListText: String!, checkListAuthor: String! items: [CheckItemInput]): CheckList
     addComment(
       checkListId: ID!
       commentText: String!
       commentAuthor: String!
     ): CheckList
-    removeCheckList(checkListId: ID!): Thought
-    removeComment(checkListId: ID!, commentId: ID!): Thought
+    removeCheckList(checkListId: ID!): CheckList
+    removeComment(checkListId: ID!, commentId: ID!): CheckList
   }
 `;
 

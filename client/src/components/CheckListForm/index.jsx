@@ -15,7 +15,7 @@ const CheckListForm = () => {
   const [characterCount, setCharacterCount] = useState(0);
 
   const [addCheckList, { error }] = useMutation(ADD_CHECKLIST, {
-    refetchQueries: [GET_ALL_CHECKLISTS, "getcheckLists"],
+    refetchQueries: [GET_ALL_CHECKLISTS, "getCheckLists"],
   });
 
   const handleFormSubmit = async (event) => {
@@ -39,7 +39,7 @@ const CheckListForm = () => {
     const { name, value } = event.target;
 
     if (name === "checkListText" && value.length <= 280) {
-      setTitle(value);
+      setCheckListText(value);
       setCharacterCount(value.length);
     }
   };
@@ -75,9 +75,9 @@ const CheckListForm = () => {
               onSubmit={handleFormSubmit}
             >
               <textarea
-                name="title"
+                name="checkListText"
                 placeholder="Title"
-                value={title}
+                value={checkListText}
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
                 onChange={handleChange}
@@ -111,7 +111,7 @@ const CheckListForm = () => {
           </>
         ) : (
           <p>
-            You need to be logged in to share your thoughts. Please{" "}
+            You need to be logged in to share your checklists. Please{" "}
             <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
           </p>
         )}
