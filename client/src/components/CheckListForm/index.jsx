@@ -25,6 +25,7 @@ const CheckListForm = () => {
       const { data } = await addCheckList({
         variables: {
           checkListText,
+          items: items.map((text) => ({ text })),
           checkListAuthor: Auth.getProfile().data.username,
         },
       });

@@ -16,9 +16,9 @@ const typeDefs = `
     _id: ID!
     checkListText: String!
     checkListAuthor: String
-    createdAt: String
+    createdAt: String!
     comments: [Comment]!
-    items: [CheckItem]
+    items: [CheckItem]!
   }
   type Comment {
     _id: ID
@@ -46,7 +46,7 @@ const typeDefs = `
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addCheckList(checkListText: String!, checkListAuthor: String!, items: [CheckItemInput]): CheckList
+    addCheckList(checkListText: String!, checkListAuthor: String!, items: [CheckItemInput]!): CheckList
     addComment(
       checkListId: ID!
       commentText: String!

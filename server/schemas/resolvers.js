@@ -4,10 +4,10 @@ const { signToken, AuthenticationError } = require("../utils/auth");
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('checkLists');
+      return User.find().populate("checkLists");
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('checkLists');
+      return User.findOne({ username }).populate("checkLists");
     },
     checkLists: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -41,8 +41,12 @@ const resolvers = {
 
       return { token, user };
     },
-    addCheckList: async (parent, { checkListText, checkListAuthor }) => {
-      const checkList = await CheckList.create({ checkListText, checkListAuthor });
+    addCheckList: async (parent, { checkListText, checkListAuthor, items }) => {
+      const checkList = await CheckList.create({
+        checkListText,
+        checkListAuthor,
+        items,
+      });
 
       await User.findOneAndUpdate(
         { username: checkListAuthor },
